@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bron Cafe Eatry</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5eee7;
+            color: #3b2118;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background-color: #5b1f24;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover {
+            color: #e9c9a8;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(45, 15, 18, 0.55),
+                    rgba(45, 15, 18, 0.65)
+                ),
+                url("https://ori-aquatik.com/wp-content/uploads/2024/08/Anjing-with-Harness-Double.webp");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            margin: 15px 0;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background-color: #8b3a3f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #6e292e;
+        }
+
+
+        /* SECTION */
+
+        section {
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #5b1f24;
+        }
+
+
+        /* ABOUT */
+
+        .about-text {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+
+        /* MENU */
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+
+        .menu-card {
+            background-color: white;
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .menu-card .content {
+            padding: 20px;
+        }
+
+        .menu-card h3 {
+            color: #5b1f24;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+
+        /* QUOTE */
+
+        .quote {
+            background-color: #5b1f24;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .quote h2 {
+            color: white;
+            font-style: italic;
+        }
+
+
+        /* ORDER */
+
+        .order-form {
+            max-width: 550px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            text-align: left;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .order-form input,
+        .order-form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .order-form button {
+            width: 100%;
+            padding: 13px;
+            background-color: #5b1f24;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .order-form button:hover {
+            background-color: #7a2b31;
+        }
+
+
+        /* INFO DISKON */
+
+        .discount-info {
+            background-color: #f5eee7;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #3b171b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Bron Cafe Eatry
+        </div>
+
+        <div>
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p>PET FRIENDLY • COFFEE • FOOD</p>
+
+            <h1>
+                Bron Cafe Eatry.
+            </h1>
+
+            <p>
+                Tempat santai untuk menikmati kopi,
+                makanan, dan waktu bersama hewan kesayangan.
+            </p>
+
+            <a href="#menu" class="btn">
+                Explore Menu
+            </a>
+
+            <a href="#order" class="btn">
+                Order Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2>
+            About Bron Cafe
+        </h2>
+
+        <p class="about-text">
+
+            Bron Cafe Eatry adalah cafe dengan konsep
+            pet friendly yang cocok untuk nongkrong santai
+            bersama teman maupun hewan kesayangan.
+
+            Kami menyediakan kopi, makanan ringan,
+            dan suasana yang nyaman dengan nuansa hangat.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- MENU -->
+
+    <section id="menu">
+
+        <h2>
+            Our Menu
+        </h2>
+
+        <p>
+            Nikmati pilihan menu favorit di Bron Cafe Eatry.
+        </p>
+
+
+        <div class="menu-container">
+
+
+            <!-- COFFEE -->
+
+            <div class="menu-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+                    alt="Coffee"
+                >
+
+                <div class="content">
+
+                    <h3>
+                        Signature Coffee
+                    </h3>
+
+                    <p>
+                        Kopi pilihan dengan rasa yang cocok
+                        untuk menemani waktu santai.
+                    </p>
+
+                    <p class="price">
+                        Rp25.000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BURGER -->
+
+            <div class="menu-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
+                    alt="Burger"
+                >
+
+                <div class="content">
+
+                    <h3>
+                        Bron Burger
+                    </h3>
+
+                    <p>
+                        Burger dengan daging juicy,
+                        sayuran segar, dan saus spesial.
+                    </p>
+
+                    <p class="price">
+                        Rp45.000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FRIES -->
+
+            <div class="menu-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=80"
+                    alt="French Fries"
+                >
+
+                <div class="content">
+
+                    <h3>
+                        French Fries
+                    </h3>
+
+                    <p>
+                        Kentang goreng crispy yang cocok
+                        untuk sharing bersama teman.
+                    </p>
+
+                    <p class="price">
+                        Rp20.000
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- QUOTE -->
+
+    <section class="quote">
+
+        <h2>
+            "Good coffee, good food, good mood."
+        </h2>
+
+        <p>
+            Karena nongkrong lebih seru kalau ditemani
+            makanan dan teman berbulu.
+        </p>
+
+    </section>
+
+
+
+    <!-- ORDER -->
+
+    <section id="order">
+
+        <h2>
+            Order Menu
+        </h2>
+
+        <p>
+            Isi form di bawah untuk melakukan pemesanan.
+        </p>
+
+
+        <form
+            class="order-form"
+            action="process.php"
+            method="POST"
+        >
+
+
+            <!-- NAMA -->
+
+            <label>
+                Nama Pelanggan
+            </label>
+
+            <input
+                type="text"
+                name="customer_name"
+                placeholder="Masukkan nama"
+                required
+            >
+
+
+
+            <!-- PILIH MENU -->
+
+            <label>
+                Pilih Menu
+            </label>
+
+            <select
+                name="product"
+                required
+            >
+
+                <option value="">
+                    -- Pilih Menu --
+                </option>
+
+                <option value="Signature Coffee|25000">
+                    Signature Coffee - Rp25.000
+                </option>
+
+                <option value="Bron Burger|45000">
+                    Bron Burger - Rp45.000
+                </option>
+
+                <option value="French Fries|20000">
+                    French Fries - Rp20.000
+                </option>
+
+            </select>
+
+
+
+            <!-- JUMLAH -->
+
+            <label>
+                Jumlah Pesanan
+            </label>
+
+            <input
+                type="number"
+                name="quantity"
+                min="1"
+                placeholder="Masukkan jumlah"
+                required
+            >
+
+
+
+            <!-- INFO DISKON -->
+
+            <div class="discount-info">
+
+                <strong>
+                    Promo Bron Cafe
+                </strong>
+
+                <br>
+
+                Belanja minimal
+                <strong>Rp100.000</strong>
+                mendapatkan diskon
+                <strong>10%</strong>.
+
+            </div>
+
+
+
+            <!-- BUTTON -->
+
+            <button type="submit">
+                Hitung Pesanan
+            </button>
+
+
+        </form>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Bron Cafe Eatry | Pet Friendly Cafe
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
